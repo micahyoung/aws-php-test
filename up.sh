@@ -4,13 +4,9 @@ set -o errexit
 set -o pipefail
 set -o nounset
 
-source state/env.sh
+source env.sh
 : ${AWS_ACCESS_KEY_ID:?"1"}
 : ${AWS_SECRET_ACCESS_KEY:?"1"}
-
-if ! [ -d aws-php-sample ]; then
-  git clone git@github.com:awslabs/aws-php-sample.git
-fi
 
 if ! [ -d aws-php-sample/vendor ]; then
   pushd aws-php-sample/
